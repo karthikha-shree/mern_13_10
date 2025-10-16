@@ -2,6 +2,7 @@
   --primary-color: #4CAF50;
   --secondary-color: #ff5722;
   --font-family: 'Arial, sans-serif';
+  --text-decoration: none;
 }
 body {
   margin: 0;
@@ -19,9 +20,6 @@ nav a {
   color: white;
   margin: 0 1rem;
   text-decoration: none;
-}
-nav a:hover {
-  text-decoration: underline;
 }
 main {
   padding: 2rem;
