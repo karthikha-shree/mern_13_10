@@ -1,8 +1,22 @@
-const express=require('express');
-const router=express.Router();
+const express = require('express');
+const router = express.Router();
 
-const {CreateTask}=require('../controllers/taskControllers');
+const { CreateTask, GetTask, GetOneTask, UpadteTaskByID ,DeleteTask ,updateTaskbyidpatch } = require('../controllers/taskControllers');
 
-router.post('/create',CreateTask);  
+const { protect } = require('../middleware/authmiddleware');
 
-module.exports=router;
+router.use(protect);//applying the protect middleware to all the routes below this line
+
+router.post('/create', protect, CreateTask);
+
+router.get("/get", protect, GetTask);
+
+router.get("/get/:id", protect, GetOneTask);
+
+router.put("/update/:id", protect, UpadteTaskByID);
+
+router.patch("/updatepatch/:id", protect, updateTaskbyidpatch);
+
+router.delete("/del/:id",protect,DeleteTask);
+
+module.exports = router;
