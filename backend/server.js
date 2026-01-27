@@ -2,14 +2,21 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const dotenv = require('dotenv');
+const cors = require('cors');
+
 dotenv.config();
+app.use(cors());
 app.use(express.json());
+
 app.use('/auth', require('./routes/authroutes'));
 app.use('/task', require('./routes/taskroutes'));
+
 app.get("/api", (req, res) => {
     res.send("Hi from Express");
 });
-
+app.get('/', (req, res) => {
+    res.send("Hello World!");
+});
 app.post("/api", (req, res) => {
     const tempData = req.body;
     res.send(tempData);
@@ -27,3 +34,5 @@ app.listen(3000, () => {
 
     console.log(`Server started on port 3000`);
 })
+
+
