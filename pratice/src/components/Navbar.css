@@ -1,0 +1,21 @@
+.navbar {
+    display:flex;
+    justify-content: space-between;
+    background-color: aqua;
+    color:rgb(166, 52, 52)
+    
+}
+
+.navbar li{
+    list-style: none;
+}
+
+.navbar li a{
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+
+.navbar li a:hover{
+    
+    color: black;
+}
