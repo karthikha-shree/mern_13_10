@@ -1,9 +1,12 @@
 import React from 'react'
 //object destructuring 
-const Profile = ({name,age,skills}) => {
+import { useContext } from 'react'
+import { usercontext } from '../App'
+const Profile = ({skills}) => {
+    const {user} = useContext(usercontext);
   return (
     <>
-    <h1>hi ! what is it !!! {name} , {age} years old </h1>
+    <h1>hi ! what is it !!! {user.name} , {user.age} years old </h1>
     <ol>
       {skills.map((i)=>(
         <li>{i}</li>

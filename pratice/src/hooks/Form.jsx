@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export const Form = () => {
@@ -9,6 +9,9 @@ export const Form = () => {
         department:""
 
     })
+    useEffect(() => {
+        console.log("Form component mounted ");
+    },[]);
     const handleChange=(e)=>{
         const {name,value}=e.target
         setform((prev)=>({
